@@ -20,7 +20,7 @@ The plugin is organized into a single directory that contains its configuration 
 
 ```
 plugins/
-└── aeon/
+└── smolvlm-256m-instruct/
     ├── model/
     ├── config.yml
     ├── requirements.txt
