@@ -138,7 +138,7 @@ def run_plugin(args: str, **kwargs) -> str:
         )[0]
         
         # This is the core fix: use the VLM's output as the input for the RAG chain.
-        print_plugin_message(f"VLM Response: {vlm_response_text}")
+        print_plugin_message(f"[VLM]: {vlm_response_text}")
 
         rag_chain = kwargs.get("rag_chain")
         if not rag_chain:
@@ -154,8 +154,8 @@ def run_plugin(args: str, **kwargs) -> str:
                 print_plugin_message("RAG system returned an empty response. Cannot ingest conversation.")
                 return {"success": False, "message": "RAG system returned an empty response."}
 
-            full_user_input = f"VLM Analysis of '{image_file.name}' based on prompt: '{prompt}'"
-            full_aeon_output = f"VLM Response: {vlm_response_text}\n\nAeon RAG Response: {aeon_response_text}"
+            full_user_input = f"[VLM]: '{image_file.name}' [USER]: '{prompt}'"
+            full_aeon_output = f"[VLM]: {vlm_response_text}\n\n[AEON]: {aeon_response_text}"
 
             _ingest_conversation_turn(
                 user_input=full_user_input,
