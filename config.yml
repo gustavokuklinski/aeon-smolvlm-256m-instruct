@@ -5,4 +5,4 @@ aeon_plugin:
   model_path: ./model/
   command: /view
   parameters: <PATH> <PROMPT>
-  desc: Used to interpret images
+  desc: Used to interpret images. User /view /camera [PROMPT] to analyze live objects via camera
